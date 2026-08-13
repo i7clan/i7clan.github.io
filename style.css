@@ -2663,108 +2663,68 @@ footer .copyright {
 
 @media (max-width: 700px) {
 
-
     nav {
-
         height: 65px;
-
     }
-
 
     nav ul {
-
-        display: none;
-
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        overflow-x: auto;
+        white-space: nowrap;
     }
 
+    nav ul li {
+        flex-shrink: 0;
+    }
 
     .nav-join {
-
-        padding:
-            10px 15px;
-
+        padding: 10px 15px;
+        flex-shrink: 0;
     }
-
 
     section:not(.hero) {
-
-        padding:
-            75px 5%;
-
+        padding: 75px 5%;
     }
-
 
     .hero {
-
-        min-height:
-            calc(100vh - 65px);
-
-        padding:
-            80px 6%;
-
+        min-height: calc(100vh - 65px);
+        padding: 80px 6%;
     }
-
 
     .hero h1 {
-
-        font-size:
-            110px;
-
-        letter-spacing:
-            -7px;
-
+        font-size: 110px;
+        letter-spacing: -7px;
     }
-
 
     .hero h2 {
-
         font-size: 38px;
-
     }
-
 
     .hero p {
-
         font-size: 13px;
-
     }
-
 
     .buttons {
-
         flex-direction: column;
-
         align-items: stretch;
-
     }
-
 
     .btn {
-
         width: 100%;
-
     }
-
 
     .live-status {
-
         flex-direction: column;
-
         align-items: flex-start;
-
         gap: 15px;
-
     }
-
 
     .status-items {
-
         flex-wrap: wrap;
-
         gap: 10px;
-
     }
-
 
     .why-grid,
     .leader-grid,
@@ -2772,129 +2732,72 @@ footer .copyright {
     .achievement-grid,
     .member-grid,
     .rules-grid {
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
     }
-
 
     .stats {
-
-        grid-template-columns:
-            1fr 1fr;
-
+        grid-template-columns: 1fr 1fr;
     }
-
 
     .stat {
-
-        border-right:
-            1px solid #252525;
-
-        border-bottom:
-            1px solid #252525;
-
+        border-right: 1px solid #252525;
+        border-bottom: 1px solid #252525;
     }
-
 
     .ranking-table {
-
         overflow-x: auto;
-
     }
-
 
     .ranking-header,
     .ranking-row {
-
         min-width: 650px;
-
     }
-
 
     .war-card {
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
         gap: 35px;
-
     }
-
 
     .spotlight-card {
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
     }
-
 
     .spotlight-image {
-
         height: 220px;
-
     }
-
 
     .spotlight-content {
-
         padding: 35px;
-
     }
-
 
     .spotlight-content h2 {
-
         font-size: 32px;
-
     }
-
 
     .spotlight-stats {
-
         flex-wrap: wrap;
-
     }
-
 
     .community-buttons {
-
         flex-direction: column;
-
     }
-
 
     .join-modal,
     .profile-modal {
-
         padding: 30px 22px;
-
     }
-
 
     .profile-stats {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
+        grid-template-columns: repeat(2, 1fr);
     }
-
 
     .profile-stats div:nth-child(2) {
-
         border-right: 0;
-
     }
-
 
     .profile-stats div:nth-child(1),
     .profile-stats div:nth-child(2) {
-
-        border-bottom:
-            1px solid #292929;
-
+        border-bottom: 1px solid #292929;
     }
 
 }
