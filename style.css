@@ -2920,3 +2920,665 @@ footer .copyright {
 html {
     scroll-behavior: smooth;
 }
+/* =====================================================
+   MEMBERS PAGE
+===================================================== */
+
+.member-hero {
+
+    position: relative;
+
+    min-height: 55vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 100px 8%;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(255, 48, 79, 0.12),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            135deg,
+            #080808,
+            #0b0b0b
+        );
+
+    border-bottom: 1px solid #202020;
+
+}
+
+
+.member-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 50px 50px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent
+        );
+
+    pointer-events: none;
+
+}
+
+
+.member-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -120px;
+
+    bottom: -220px;
+
+    width: 550px;
+
+    height: 550px;
+
+    border:
+        1px solid rgba(255,48,79,0.18);
+
+    transform:
+        rotate(45deg);
+
+}
+
+
+.member-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+}
+
+
+.member-hero h1 {
+
+    margin-top: 25px;
+
+    font-size:
+        clamp(55px, 9vw, 120px);
+
+    line-height: 0.9;
+
+    font-weight: 1000;
+
+    letter-spacing: -6px;
+
+    text-transform: uppercase;
+
+}
+
+
+.member-hero h1 span {
+
+    color: var(--red);
+
+}
+
+
+.member-hero p {
+
+    max-width: 600px;
+
+    margin-top: 25px;
+
+    color: #777;
+
+    font-size: 15px;
+
+}
+
+
+.member-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 30px;
+
+    color: #777;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+/* =====================================================
+   MEMBER GRID
+===================================================== */
+
+.members-page {
+
+    background: #090909;
+
+}
+
+
+.member-page-grid {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+}
+
+
+/* =====================================================
+   MEMBER PROFILE CARD
+===================================================== */
+
+.member-profile-card {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 150px 1fr;
+
+    min-height: 270px;
+
+    background: #101010;
+
+    border:
+        1px solid #292929;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s,
+        border-color 0.25s,
+        background 0.25s;
+
+}
+
+
+.member-profile-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--red);
+
+    background: #131313;
+
+}
+
+
+.member-profile-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -50px;
+
+    bottom: -50px;
+
+    width: 150px;
+
+    height: 150px;
+
+    border:
+        1px solid rgba(255,48,79,0.14);
+
+    transform:
+        rotate(45deg);
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   MEMBER AVATAR
+===================================================== */
+
+.member-profile-avatar {
+
+    min-height: 270px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #181818,
+            #0b0b0b
+        );
+
+    color: var(--red);
+
+    font-size: 55px;
+
+    font-weight: 1000;
+
+    border-right:
+        1px solid #292929;
+
+}
+
+
+.member-profile-card:hover
+.member-profile-avatar {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #211015,
+            #0b0b0b
+        );
+
+}
+
+
+/* =====================================================
+   MEMBER INFORMATION
+===================================================== */
+
+.member-profile-info {
+
+    padding: 30px;
+
+}
+
+
+.member-role {
+
+    color: var(--red);
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.member-profile-info h3 {
+
+    margin-top: 8px;
+
+    font-size: 24px;
+
+    font-weight: 1000;
+
+}
+
+
+.member-profile-info > p {
+
+    margin-top: 4px;
+
+    color: #666;
+
+    font-size: 11px;
+
+}
+
+
+.member-stat-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    margin-top: 25px;
+
+    border:
+        1px solid #292929;
+
+}
+
+
+.member-stat-row span {
+
+    padding: 12px;
+
+    color: #555;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+}
+
+
+.member-stat-row span + span {
+
+    border-left:
+        1px solid #292929;
+
+}
+
+
+.member-stat-row strong {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #aaa;
+
+    font-size: 10px;
+
+}
+
+
+.member-stat-row strong.online {
+
+    color: var(--green);
+
+}
+
+
+/* =====================================================
+   ROBLOX BUTTON
+===================================================== */
+
+.member-profile-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 20px;
+
+    padding: 11px 15px;
+
+    background: transparent;
+
+    border:
+        1px solid #333;
+
+    color: #aaa;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    transition:
+        background 0.2s,
+        border-color 0.2s,
+        color 0.2s;
+
+}
+
+
+.member-profile-btn:hover {
+
+    background: var(--red);
+
+    border-color: var(--red);
+
+    color: #fff;
+
+}
+
+
+/* =====================================================
+   EMPTY MEMBER
+===================================================== */
+
+.empty-member {
+
+    opacity: 0.65;
+
+}
+
+
+.empty-member:hover {
+
+    opacity: 1;
+
+}
+
+
+.empty-member
+.member-profile-avatar {
+
+    color: #555;
+
+}
+
+
+.empty-member .member-role {
+
+    color: #555;
+
+}
+
+
+/* =====================================================
+   MEMBER JOIN
+===================================================== */
+
+.member-join {
+
+    background: #050505;
+
+}
+
+
+.member-join-box {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 75px 40px;
+
+    text-align: center;
+
+    border:
+        1px solid #292929;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,48,79,0.08),
+            transparent 65%
+        );
+
+}
+
+
+.member-join-box h2 {
+
+    margin-top: 20px;
+
+    font-size:
+        clamp(35px, 6vw, 65px);
+
+    line-height: 1;
+
+    text-transform: uppercase;
+
+}
+
+
+.member-join-box p {
+
+    max-width: 550px;
+
+    margin: 20px auto 30px;
+
+    color: #666;
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================================
+   ACTIVE NAVIGATION
+===================================================== */
+
+nav ul li a.active {
+
+    color: #fff;
+
+}
+
+
+nav ul li a.active::after {
+
+    width: 100%;
+
+}
+
+
+/* =====================================================
+   MEMBER PAGE MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .member-page-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .member-hero {
+
+        min-height: 60vh;
+
+        padding:
+            80px 6%;
+
+    }
+
+
+    .member-hero h1 {
+
+        font-size: 60px;
+
+        letter-spacing: -4px;
+
+    }
+
+
+    .member-profile-card {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .member-profile-avatar {
+
+        min-height: 180px;
+
+        border-right: 0;
+
+        border-bottom:
+            1px solid #292929;
+
+    }
+
+
+    .member-profile-info {
+
+        padding: 25px;
+
+    }
+
+
+    .member-stat-row {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .member-stat-row span + span {
+
+        border-left: 0;
+
+        border-top:
+            1px solid #292929;
+
+    }
+
+
+    .member-join-box {
+
+        padding:
+            60px 25px;
+
+    }
+
+}
