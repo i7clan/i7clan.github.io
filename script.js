@@ -288,7 +288,10 @@ window.addEventListener(
             document.getElementById(
                 "joinModal"
             );
-
+          const connectModal =
+    document.getElementById(
+        "connectModal"
+    );
 
         if (
             leaderModal &&
@@ -308,6 +311,14 @@ window.addEventListener(
             closeJoin();
 
         }
+       if (
+    connectModal &&
+    event.target === connectModal
+) {
+
+    closeConnect();
+
+}
 
     }
 );
@@ -322,13 +333,15 @@ document.addEventListener(
     "keydown",
     function(event) {
 
-        if (event.key === "Escape") {
+     if (event.key === "Escape") {
 
-            closeLeader();
+    closeLeader();
 
-            closeJoin();
+    closeJoin();
 
-        }
+    closeConnect();
+
+}
 
     }
 );
@@ -344,10 +357,29 @@ console.log(
 );
 
 
+/* =====================================================
+   CONNECT WITH I7 MODAL
+===================================================== */
+
 function openConnect() {
-    document.getElementById("connectModal").classList.add("active");
+
+    const modal =
+        document.getElementById("connectModal");
+
+    if (!modal) return;
+
+    modal.classList.add("active");
+
 }
 
+
 function closeConnect() {
-    document.getElementById("connectModal").classList.remove("active");
+
+    const modal =
+        document.getElementById("connectModal");
+
+    if (!modal) return;
+
+    modal.classList.remove("active");
+
 }
