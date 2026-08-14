@@ -342,3 +342,12 @@ document.addEventListener(
 console.log(
     "I7 Clan script.js loaded successfully."
 );
+
+
+function openConnect() {
+    document.getElementById("connectModal").classList.add("active");
+}
+
+function closeConnect() {
+    document.getElementById("connectModal").classList.remove("active");
+}
