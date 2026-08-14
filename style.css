@@ -2498,7 +2498,206 @@ section:not(.hero) {
 
 }
 
+/* =====================================================
+   CONNECT WITH I7 MODAL
+===================================================== */
 
+.connect-modal {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 45px;
+
+    background: #101010;
+
+    border:
+        1px solid #333;
+
+    text-align: center;
+
+}
+
+
+.connect-modal h2 {
+
+    margin-top: 18px;
+
+    font-size: 32px;
+
+    text-transform: uppercase;
+
+}
+
+
+.connect-modal > p {
+
+    max-width: 380px;
+
+    margin: 8px auto 0;
+
+    color: #666;
+
+    font-size: 12px;
+
+}
+
+
+.connect-label {
+
+    color: var(--red);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+}
+
+
+.connect-close {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 18px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #777;
+
+    font-size: 30px;
+
+}
+
+
+.connect-close:hover {
+
+    color: var(--red);
+
+}
+
+
+.connect-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+}
+
+
+.connect-link {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 17px 20px;
+
+    text-align: left;
+
+    background: #0b0b0b;
+
+    border:
+        1px solid #292929;
+
+    transition:
+        transform 0.2s,
+        border-color 0.2s,
+        background 0.2s;
+
+}
+
+
+.connect-link:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        var(--red);
+
+    background: #151515;
+
+}
+
+
+.connect-link > :first-child {
+
+    width: 30px;
+
+    text-align: center;
+
+    font-size: 22px;
+
+}
+
+
+.connect-link span {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.connect-link strong {
+
+    color: #fff;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.connect-link small {
+
+    margin-top: 3px;
+
+    color: #666;
+
+    font-size: 9px;
+
+}
+
+
+/* =====================================================
+   CONNECT MODAL MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .connect-modal {
+
+        padding: 35px 22px;
+
+    }
+
+
+    .connect-modal h2 {
+
+        font-size: 27px;
+
+    }
+
+}
 /* =====================================================
    FOOTER
 ===================================================== */
