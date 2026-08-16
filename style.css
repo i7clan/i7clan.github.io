@@ -3684,3 +3684,223 @@ nav ul li a.active::after {
     }
 
 }
+/* =====================================================
+   MEMBER SEARCH
+===================================================== */
+
+.member-search {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+
+/* SEARCH BOX */
+
+.member-search-box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #0d0d0d;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    transition: 0.3s ease;
+    overflow: hidden;
+}
+
+
+/* SEARCH ICON */
+
+.member-search-icon {
+    font-size: 18px;
+    margin-left: 20px;
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+
+/* INPUT */
+
+#memberSearch {
+    width: 100%;
+    padding: 18px 55px 18px 14px;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+#memberSearch::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* SEARCH BOX FOCUS */
+
+.member-search-box:focus-within {
+    border-color: rgba(255, 255, 255, 0.45);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.04),
+        0 0 25px rgba(255, 255, 255, 0.06);
+
+    transform: translateY(-2px);
+}
+
+
+/* CLEAR BUTTON */
+
+.clear-search {
+    position: absolute;
+    right: 14px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+
+    font-size: 22px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.clear-search:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: rotate(90deg);
+}
+
+
+/* SEARCH INFO */
+
+.member-search-info {
+    margin-top: 14px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+
+/* =====================================================
+   NO MEMBERS FOUND
+===================================================== */
+
+.no-members-found {
+    width: 100%;
+    padding: 60px 20px;
+
+    text-align: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.02);
+}
+
+
+.no-members-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+
+.no-members-found h3 {
+    margin: 0 0 8px;
+
+    color: #ffffff;
+
+    font-size: 24px;
+}
+
+
+.no-members-found p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   SEARCH CARD TRANSITION
+===================================================== */
+
+.member-profile-card {
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =====================================================
+   MOBILE SEARCH
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .member-search {
+        margin-bottom: 35px;
+    }
+
+
+    .member-search-box {
+        border-radius: 12px;
+    }
+
+
+    #memberSearch {
+        padding: 16px 50px 16px 12px;
+        font-size: 15px;
+    }
+
+
+    .member-search-icon {
+        margin-left: 15px;
+        font-size: 16px;
+    }
+
+
+    .clear-search {
+        right: 10px;
+        width: 30px;
+        height: 30px;
+    }
+
+
+    .member-search-info {
+        font-size: 12px;
+    }
+
+
+    .no-members-found {
+        padding: 45px 15px;
+    }
+
+
+    .no-members-found h3 {
+        font-size: 20px;
+    }
+
+}
