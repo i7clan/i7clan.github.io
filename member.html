@@ -155,12 +155,69 @@
     </div>
 
 
-    <div class="member-page-grid">
+
+    <!-- =================================================
+         MEMBER SEARCH
+    ================================================== -->
+
+    <div class="member-search">
+
+        <div class="member-search-box">
+
+            <span class="member-search-icon">
+                🔎
+            </span>
+
+            <input
+                type="text"
+                id="memberSearch"
+                placeholder="Search I7 members..."
+                autocomplete="off"
+                aria-label="Search I7 members"
+            >
+
+            <button
+                type="button"
+                id="clearSearch"
+                class="clear-search"
+                aria-label="Clear search"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="member-search-info">
+
+            <span id="memberCount">
+                Showing 4 members
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         MEMBER GRID
+    ================================================== -->
+
+    <div
+        class="member-page-grid"
+        id="membersGrid"
+    >
 
 
         <!-- MEMBER 01 -->
 
-        <div class="member-profile-card">
+        <div
+            class="member-profile-card"
+            data-member-name="i7_clan"
+            data-member-role="leader"
+            data-member-status="active"
+        >
 
             <div class="member-profile-avatar">
                 I7
@@ -215,7 +272,12 @@
 
         <!-- MEMBER 02 -->
 
-        <div class="member-profile-card">
+        <div
+            class="member-profile-card"
+            data-member-name="l1nk0"
+            data-member-role="leader"
+            data-member-status="active"
+        >
 
             <div class="member-profile-avatar">
                 L
@@ -270,7 +332,12 @@
 
         <!-- MEMBER 03 -->
 
-        <div class="member-profile-card">
+        <div
+            class="member-profile-card"
+            data-member-name="jaden"
+            data-member-role="leader"
+            data-member-status="active"
+        >
 
             <div class="member-profile-avatar">
                 J
@@ -325,7 +392,12 @@
 
         <!-- MEMBER 04 -->
 
-        <div class="member-profile-card empty-member">
+        <div
+            class="member-profile-card empty-member"
+            data-member-name="coming soon"
+            data-member-role="player"
+            data-member-status="open"
+        >
 
             <div class="member-profile-avatar">
                 ?
@@ -376,6 +448,32 @@
 
 
     </div>
+
+
+    <!-- =================================================
+         NO RESULTS MESSAGE
+    ================================================== -->
+
+    <div
+        id="noMembersFound"
+        class="no-members-found"
+        style="display: none;"
+    >
+
+        <div class="no-members-icon">
+            💀
+        </div>
+
+        <h3>
+            No I7 members found
+        </h3>
+
+        <p>
+            Try searching for another member.
+        </p>
+
+    </div>
+
 
 </section>
 
@@ -461,6 +559,149 @@
     </p>
 
 </footer>
+
+
+
+<!-- =====================================================
+     MEMBER SEARCH JAVASCRIPT
+===================================================== -->
+
+<script>
+
+const memberSearch = document.getElementById("memberSearch");
+
+const clearSearch = document.getElementById("clearSearch");
+
+const memberCount = document.getElementById("memberCount");
+
+const memberCards = document.querySelectorAll(
+    ".member-profile-card"
+);
+
+const noMembersFound = document.getElementById(
+    "noMembersFound"
+);
+
+
+
+function searchMembers() {
+
+    const searchTerm =
+        memberSearch.value
+        .toLowerCase()
+        .trim();
+
+
+    let visibleMembers = 0;
+
+
+    memberCards.forEach(function(card) {
+
+        const name =
+            card.dataset.memberName
+            .toLowerCase();
+
+        const role =
+            card.dataset.memberRole
+            .toLowerCase();
+
+        const status =
+            card.dataset.memberStatus
+            .toLowerCase();
+
+
+        const matches =
+            name.includes(searchTerm) ||
+            role.includes(searchTerm) ||
+            status.includes(searchTerm);
+
+
+        if (matches) {
+
+            card.style.display = "";
+
+            visibleMembers++;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+
+    if (searchTerm === "") {
+
+        memberCount.textContent =
+            "Showing " +
+            memberCards.length +
+            " members";
+
+    } else {
+
+        memberCount.textContent =
+            visibleMembers +
+            " member" +
+            (visibleMembers === 1 ? "" : "s") +
+            " found";
+
+    }
+
+
+
+    if (visibleMembers === 0) {
+
+        noMembersFound.style.display = "block";
+
+    } else {
+
+        noMembersFound.style.display = "none";
+
+    }
+
+
+
+    if (searchTerm.length > 0) {
+
+        clearSearch.style.display = "block";
+
+    } else {
+
+        clearSearch.style.display = "none";
+
+    }
+
+}
+
+
+
+memberSearch.addEventListener(
+    "input",
+    searchMembers
+);
+
+
+
+clearSearch.addEventListener(
+    "click",
+    function() {
+
+        memberSearch.value = "";
+
+        searchMembers();
+
+        memberSearch.focus();
+
+    }
+);
+
+
+
+clearSearch.style.display = "none";
+
+</script>
 
 
 </body>
