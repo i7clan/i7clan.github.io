@@ -191,7 +191,7 @@
         <div class="member-search-info">
 
             <span id="memberCount">
-                Showing 4 members
+                Showing 5 members
             </span>
 
         </div>
@@ -393,36 +393,36 @@
         <!-- MEMBER 04 -->
 
         <div
-            class="member-profile-card empty-member"
-            data-member-name="coming soon"
-            data-member-role="player"
-            data-member-status="open"
+            class="member-profile-card"
+            data-member-name="addiesbro14 avz"
+            data-member-role="player sniper"
+            data-member-status="active"
         >
 
             <div class="member-profile-avatar">
-                ?
+                A
             </div>
 
             <div class="member-profile-info">
 
                 <span class="member-role">
-                    OPEN SLOT
+                    PLAYER
                 </span>
 
                 <h3>
-                    Coming Soon
+                    Addiesbro14
                 </h3>
 
                 <p>
-                    New I7 member will appear here.
+                    I7 Clan Player • Level 263
                 </p>
 
                 <div class="member-stat-row">
 
                     <span>
                         STATUS
-                        <strong>
-                            OPEN
+                        <strong class="online">
+                            ACTIVE
                         </strong>
                     </span>
 
@@ -436,10 +436,72 @@
                 </div>
 
                 <a
-                    href="index.html#recruitment"
+                    href="https://www.roblox.com/users/1616577569/profile"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="member-profile-btn"
                 >
-                    APPLY TO JOIN
+                    ROBLOX PROFILE
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MEMBER 05 -->
+
+        <div
+            class="member-profile-card"
+            data-member-name="i7 player brother"
+            data-member-role="player"
+            data-member-status="active"
+        >
+
+            <div class="member-profile-avatar">
+                P
+            </div>
+
+            <div class="member-profile-info">
+
+                <span class="member-role">
+                    PLAYER
+                </span>
+
+                <h3>
+                    i7_Annonymus
+                </h3>
+
+                <p>
+                    I7 Clan Player • Level 100
+                </p>
+
+                <div class="member-stat-row">
+
+                    <span>
+                        STATUS
+                        <strong class="online">
+                            ACTIVE
+                        </strong>
+                    </span>
+
+                    <span>
+                        ROLE
+                        <strong>
+                            PLAYER
+                        </strong>
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://www.roblox.com/users/10392423168/profile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="member-profile-btn"
+                >
+                    ROBLOX PROFILE
                 </a>
 
             </div>
@@ -448,6 +510,7 @@
 
 
     </div>
+
 
 
     <!-- =================================================
@@ -583,14 +646,12 @@ const noMembersFound = document.getElementById(
 );
 
 
-
 function searchMembers() {
 
     const searchTerm =
         memberSearch.value
         .toLowerCase()
         .trim();
-
 
     let visibleMembers = 0;
 
@@ -631,7 +692,6 @@ function searchMembers() {
     });
 
 
-
     if (searchTerm === "") {
 
         memberCount.textContent =
@@ -650,7 +710,6 @@ function searchMembers() {
     }
 
 
-
     if (visibleMembers === 0) {
 
         noMembersFound.style.display = "block";
@@ -660,7 +719,6 @@ function searchMembers() {
         noMembersFound.style.display = "none";
 
     }
-
 
 
     if (searchTerm.length > 0) {
@@ -676,12 +734,10 @@ function searchMembers() {
 }
 
 
-
 memberSearch.addEventListener(
     "input",
     searchMembers
 );
-
 
 
 clearSearch.addEventListener(
@@ -698,8 +754,8 @@ clearSearch.addEventListener(
 );
 
 
-
 clearSearch.style.display = "none";
+
 
 </script>
 
