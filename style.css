@@ -3904,3 +3904,457 @@ nav ul li a.active::after {
     }
 
 }
+/* =====================================================
+   I7 TOURNAMENT SECTION
+===================================================== */
+
+.tournament-section {
+    padding: 110px 8%;
+    background: #080808;
+}
+
+
+.tournament-card {
+    max-width: 1150px;
+    margin: 50px auto 0;
+
+    background: #101010;
+
+    border: 1px solid #252525;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.4);
+}
+
+
+/* HEADER */
+
+.tournament-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 40px;
+
+    padding: 50px;
+
+    border-bottom: 1px solid #242424;
+}
+
+
+.tournament-label {
+    display: inline-block;
+
+    color: #ff304f;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+
+.tournament-header h3 {
+    margin: 0;
+
+    font-size: 42px;
+
+    line-height: 1;
+}
+
+
+.tournament-header h3 span {
+    display: block;
+
+    color: #ff304f;
+
+    font-size: 24px;
+
+    margin-top: 8px;
+
+    letter-spacing: 3px;
+}
+
+
+.tournament-header p {
+    color: #888;
+
+    max-width: 600px;
+
+    line-height: 1.7;
+
+    margin-top: 18px;
+}
+
+
+/* DATE */
+
+.tournament-date {
+    min-width: 170px;
+
+    text-align: center;
+
+    padding: 25px;
+
+    background: #161616;
+
+    border: 1px solid #292929;
+
+    border-radius: 12px;
+}
+
+
+.tournament-date small {
+    display: block;
+
+    color: #777;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+.tournament-date strong {
+    display: block;
+
+    color: #ff304f;
+
+    font-size: 64px;
+
+    line-height: 1;
+
+    font-weight: 900;
+}
+
+
+.tournament-date span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #aaa;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* PROGRESS */
+
+.tournament-progress-section {
+    padding: 40px 50px;
+
+    border-bottom: 1px solid #242424;
+}
+
+
+.progress-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 18px;
+}
+
+
+.progress-heading small {
+    display: block;
+
+    color: #777;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 7px;
+}
+
+
+.progress-heading h4 {
+    margin: 0;
+
+    font-size: 24px;
+}
+
+
+.players-needed {
+    color: #ff304f;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.tournament-progress-bar {
+    width: 100%;
+
+    height: 10px;
+
+    background: #222;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.tournament-progress-fill {
+    height: 100%;
+
+    background: #ff304f;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 18px rgba(255, 48, 79, 0.5);
+}
+
+
+.progress-text {
+    color: #666;
+
+    font-size: 12px;
+
+    margin-top: 12px;
+}
+
+
+/* INFO */
+
+.tournament-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    padding: 40px 50px;
+}
+
+
+.tournament-info-card {
+    padding: 25px;
+
+    background: #151515;
+
+    border: 1px solid #242424;
+
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+
+.tournament-info-card span {
+    display: block;
+
+    font-size: 22px;
+
+    margin-bottom: 12px;
+}
+
+
+.tournament-info-card small {
+    display: block;
+
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 7px;
+}
+
+
+.tournament-info-card strong {
+    color: white;
+
+    font-size: 18px;
+}
+
+
+/* STATUS */
+
+.tournament-status {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 25px 50px;
+
+    background: #0c0c0c;
+
+    border-top: 1px solid #242424;
+}
+
+
+.status-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.status-left .status-dot {
+    width: 9px;
+
+    height: 9px;
+
+    background: #ff304f;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px rgba(255, 48, 79, 0.7);
+}
+
+
+.status-left strong {
+    display: block;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+.status-left p {
+    margin: 4px 0 0;
+
+    color: #666;
+
+    font-size: 11px;
+}
+
+
+.tournament-join-btn {
+    display: inline-block;
+
+    padding: 14px 22px;
+
+    background: #ff304f;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    border-radius: 6px;
+
+    transition: 0.2s;
+}
+
+
+.tournament-join-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(255, 48, 79, 0.25);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .tournament-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 35px 25px;
+    }
+
+
+    .tournament-date {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    .tournament-progress-section {
+        padding: 35px 25px;
+    }
+
+
+    .tournament-info-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        padding: 35px 25px;
+    }
+
+
+    .tournament-status {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 25px;
+    }
+
+
+    .tournament-join-btn {
+        width: 100%;
+
+        text-align: center;
+
+        box-sizing: border-box;
+    }
+
+
+    .tournament-header h3 {
+        font-size: 32px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .tournament-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .progress-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+}
