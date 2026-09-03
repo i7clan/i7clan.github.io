@@ -337,7 +337,70 @@ nav ul li a:hover::after {
     letter-spacing: 1px;
 
 }
+/* =====================================================
+   AUTH BUTTONS
+===================================================== */
 
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-auth a {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 0 16px;
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: 0.2s ease;
+}
+
+/* LOGIN */
+
+.nav-login {
+    color: #fff;
+    background: transparent;
+    border: 1px solid #333;
+}
+
+.nav-login:hover {
+    border-color: var(--red);
+    color: var(--red);
+}
+
+/* SIGN UP */
+
+.nav-signup {
+    color: #fff;
+    background: var(--red);
+    border: 1px solid var(--red);
+}
+
+.nav-signup:hover {
+    background: #ff4964;
+    border-color: #ff4964;
+}
+
+/* ACCOUNT */
+
+.nav-account {
+    color: #fff;
+    background: #111;
+    border: 1px solid #333;
+}
+
+.nav-account:hover {
+    border-color: var(--red);
+    color: var(--red);
+}
 
 .nav-join:hover {
 
