@@ -1,0 +1,275 @@
+/* ================================
+   I7 CLAN - AUTHENTICATION PAGES
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, rgba(255, 70, 70, 0.12), transparent 35%),
+        #070707;
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 15px;
+}
+
+/* Main container */
+
+.auth-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Authentication box */
+
+.auth-box {
+    width: 100%;
+    max-width: 430px;
+
+    background: rgba(18, 18, 18, 0.96);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 40px rgba(0, 0, 0, 0.7),
+        0 0 80px rgba(255, 50, 50, 0.05);
+
+    backdrop-filter: blur(10px);
+}
+
+/* I7 Logo */
+
+.auth-logo {
+    width: 85px;
+    height: 85px;
+
+    object-fit: contain;
+
+    margin-bottom: 20px;
+
+    filter: drop-shadow(0 0 15px rgba(255, 50, 50, 0.25));
+}
+
+/* Heading */
+
+.auth-box h1 {
+    font-size: 30px;
+    font-weight: 800;
+
+    margin-bottom: 8px;
+
+    letter-spacing: -0.5px;
+}
+
+/* Subtitle */
+
+.subtitle {
+    color: #999;
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+/* Form */
+
+#login-form,
+#signup-form {
+    text-align: left;
+}
+
+/* Input group */
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+
+.input-group label {
+    display: block;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #cccccc;
+
+    margin-bottom: 8px;
+}
+
+/* Inputs */
+
+.input-group input {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    background: #0d0d0d;
+
+    border: 1px solid #292929;
+    border-radius: 9px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+/* Input focus */
+
+.input-group input:focus {
+    border-color: #e63946;
+
+    box-shadow:
+        0 0 0 3px rgba(230, 57, 70, 0.12);
+}
+
+/* Placeholder */
+
+.input-group input::placeholder {
+    color: #666;
+}
+
+/* Authentication button */
+
+.auth-button {
+    width: 100%;
+
+    border: none;
+    border-radius: 9px;
+
+    padding: 14px;
+
+    background: #e63946;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+    margin-top: 5px;
+}
+
+/* Button hover */
+
+.auth-button:hover {
+    background: #ff4655;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(230, 57, 70, 0.2);
+}
+
+/* Button click */
+
+.auth-button:active {
+    transform: translateY(0);
+}
+
+/* Message */
+
+#message {
+    min-height: 20px;
+
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    color: #ff6b6b;
+}
+
+/* Footer */
+
+.auth-footer {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #242424;
+
+    font-size: 14px;
+
+    color: #888;
+}
+
+/* Links */
+
+.auth-footer a {
+    color: #ff4655;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.auth-footer a:hover {
+    color: #ffffff;
+}
+
+/* Back to home */
+
+.back-home {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    color: #777 !important;
+}
+
+.back-home:hover {
+    color: #ffffff !important;
+}
+
+/* ================================
+   MOBILE
+   ================================ */
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    .auth-box {
+        padding: 30px 22px;
+
+        border-radius: 15px;
+    }
+
+    .auth-box h1 {
+        font-size: 26px;
+    }
+
+    .auth-logo {
+        width: 70px;
+        height: 70px;
+    }
+}

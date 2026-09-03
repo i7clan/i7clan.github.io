@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>I7 Clan | Community</title>
+
+    <link rel="stylesheet" href="community.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="i7-logo.png" alt="I7 Clan">
+            <span>I7 CLAN</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="member.html">Members</a>
+            <a href="community.html" class="active">Community</a>
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </nav>
+
+
+    <main class="community-container">
+
+        <header class="community-header">
+            <h1>I7 COMMUNITY</h1>
+            <p>Talk with the I7 community.</p>
+        </header>
+
+
+        <section class="rules-box">
+            <h2>Community Rules</h2>
+
+            <ul>
+                <li>Respect everyone.</li>
+                <li>No bullying or harassment.</li>
+                <li>No spam.</li>
+                <li>Do not share private information.</li>
+                <li>Keep conversations appropriate.</li>
+            </ul>
+        </section>
+
+
+        <section class="chat-box">
+
+            <div class="chat-header">
+                <div>
+                    <h2>Community Chat</h2>
+                    <span id="userStatus">Checking account...</span>
+                </div>
+            </div>
+
+
+            <div id="messages" class="messages">
+                <div class="loading">
+                    Loading messages...
+                </div>
+            </div>
+
+
+            <form id="messageForm" class="message-form">
+
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Write a message..."
+                    maxlength="500"
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit">
+                    Send
+                </button>
+
+            </form>
+
+            <p id="messageStatus"></p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 I7 Clan. All rights reserved.</p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="auth.js"></script>
+    <script src="community.js"></script>
+
+</body>
+</html>

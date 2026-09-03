@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>I7 Clan | My Profile</title>
+
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="nav-logo">
+            <img src="i7-logo.png" alt="I7 Clan Logo">
+            <span>I7 CLAN</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="member.html">Members</a>
+            <a href="community.html">Community</a>
+            <button id="logoutBtn">Logout</button>
+        </div>
+
+    </nav>
+
+
+    <main class="profile-container">
+
+        <div class="profile-header">
+            <h1>MY PROFILE</h1>
+            <p>Your I7 Community account</p>
+        </div>
+
+
+        <section class="profile-card">
+
+            <div class="avatar" id="avatar">
+                ?
+            </div>
+
+            <h2 id="username">Loading...</h2>
+
+            <p class="account-label">
+                I7 COMMUNITY MEMBER
+            </p>
+
+
+            <div class="profile-info">
+
+                <div class="info-box">
+                    <span class="info-title">USERNAME</span>
+                    <strong id="profileUsername">Loading...</strong>
+                </div>
+
+                <div class="info-box">
+                    <span class="info-title">EMAIL</span>
+                    <strong id="profileEmail">Loading...</strong>
+                </div>
+
+                <div class="info-box">
+                    <span class="info-title">JOINED</span>
+                    <strong id="profileJoined">Loading...</strong>
+                </div>
+
+                <div class="info-box">
+                    <span class="info-title">MESSAGES SENT</span>
+                    <strong id="messageCount">Loading...</strong>
+                </div>
+
+            </div>
+
+
+            <a href="community.html" class="community-button">
+                BACK TO COMMUNITY
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 I7 Clan. All rights reserved.</p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="auth.js"></script>
+    <script src="profile.js"></script>
+
+</body>
+</html>
