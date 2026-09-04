@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PMKN | I7 Clan</title>
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #070707;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+            --red: #ff3150;
+            --red-light: #ff4964;
+            --border: #222222;
+            --muted: #777777;
+            --card: #101010;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            width: 100%;
+            min-height: 74px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            background: rgba(7, 7, 7, 0.96);
+            border-bottom: 1px solid var(--border);
+
+            backdrop-filter: blur(12px);
+        }
+
+        .logo {
+            font-size: 31px;
+            font-weight: 1000;
+            letter-spacing: -2px;
+        }
+
+        .logo span {
+            color: var(--red);
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+
+            list-style: none;
+        }
+
+        nav ul li a {
+            position: relative;
+
+            color: #999999;
+
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            transition: 0.25s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+        }
+
+        nav ul li a::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 2px;
+
+            background: var(--red);
+
+            transition: 0.25s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 620px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 100px 6%;
+
+            border-bottom: 1px solid var(--border);
+
+            background:
+                radial-gradient(
+                    circle at 80% 30%,
+                    rgba(255, 49, 80, 0.08),
+                    transparent 35%
+                ),
+                #070707;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+
+            margin-bottom: 18px;
+
+            color: var(--red);
+
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(70px, 13vw, 150px);
+            font-weight: 1000;
+            line-height: 0.85;
+            letter-spacing: -7px;
+        }
+
+        .hero h1 span {
+            color: var(--red);
+        }
+
+        .hero h2 {
+            margin-top: 25px;
+
+            color: #dddddd;
+
+            font-size: 25px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            max-width: 650px;
+
+            margin-top: 18px;
+
+            color: #777777;
+
+            font-size: 14px;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            margin-top: 28px;
+        }
+
+        .tag {
+            padding: 8px 13px;
+
+            border: 1px solid #292929;
+
+            color: #999999;
+
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+
+        /* =====================================================
+           GENERAL
+        ===================================================== */
+
+        .container {
+            width: 88%;
+            max-width: 1200px;
+
+            margin: auto;
+            padding: 100px 0;
+        }
+
+        .heading {
+            margin-bottom: 45px;
+        }
+
+        .heading small {
+            color: var(--red);
+
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .heading h2 {
+            margin-top: 8px;
+
+            font-size: 42px;
+            font-weight: 1000;
+            letter-spacing: -2px;
+        }
+
+        .heading p {
+            max-width: 650px;
+
+            margin-top: 10px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            padding: 35px;
+
+            background: var(--card);
+            border: 1px solid var(--border);
+        }
+
+        .card-label {
+            color: var(--red);
+
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .card h3 {
+            margin-top: 10px;
+
+            font-size: 25px;
+            font-weight: 1000;
+        }
+
+        .card p {
+            margin-top: 12px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           KAIRIO
+        ===================================================== */
+
+        .founder {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+
+            border: 1px solid var(--border);
+
+            background: #0d0d0d;
+        }
+
+        .founder-side {
+            padding: 45px;
+
+            background: #111111;
+
+            border-right: 1px solid var(--border);
+        }
+
+        .founder-number {
+            color: var(--red);
+
+            font-size: 60px;
+            font-weight: 1000;
+            line-height: 1;
+        }
+
+        .founder-side p {
+            margin-top: 15px;
+
+            color: #666666;
+
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .founder-info {
+            padding: 45px;
+        }
+
+        .founder-info small {
+            color: var(--red);
+
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .founder-info h3 {
+            margin-top: 8px;
+
+            font-size: 38px;
+            font-weight: 1000;
+        }
+
+        .founder-info p {
+            max-width: 650px;
+
+            margin-top: 15px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .profile-link {
+            display: inline-flex;
+
+            margin-top: 25px;
+            padding: 12px 18px;
+
+            border: 1px solid #333333;
+
+            color: #ffffff;
+
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            transition: 0.2s ease;
+        }
+
+        .profile-link:hover {
+            border-color: var(--red);
+            color: var(--red);
+        }
+
+
+        /* =====================================================
+           RULES
+        ===================================================== */
+
+        .rules {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .rule {
+            padding: 28px;
+
+            background: var(--card);
+            border: 1px solid var(--border);
+
+            transition: 0.2s ease;
+        }
+
+        .rule:hover {
+            border-color: #3a3a3a;
+            transform: translateY(-3px);
+        }
+
+        .rule-number {
+            color: var(--red);
+
+            font-size: 11px;
+            font-weight: 900;
+        }
+
+        .rule h3 {
+            margin-top: 12px;
+
+            font-size: 18px;
+            font-weight: 1000;
+        }
+
+        .rule p {
+            margin-top: 7px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+           UPDATES
+        ===================================================== */
+
+        .updates {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .update {
+            padding: 30px;
+
+            background: var(--card);
+            border: 1px solid var(--border);
+        }
+
+        .update-label {
+            color: var(--red);
+
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .update h3 {
+            margin-top: 10px;
+
+            font-size: 20px;
+            font-weight: 1000;
+        }
+
+        .update p {
+            margin-top: 10px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           DISCORD
+        ===================================================== */
+
+        .discord {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            margin-top: 20px;
+            padding: 40px;
+
+            background: linear-gradient(
+                135deg,
+                #151515,
+                #0b0b0b
+            );
+
+            border: 1px solid var(--border);
+
+            overflow: hidden;
+        }
+
+        .discord::before {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            width: 3px;
+            height: 100%;
+
+            background: var(--red);
+        }
+
+        .discord small {
+            color: var(--red);
+
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .discord h3 {
+            margin-top: 7px;
+
+            font-size: 28px;
+            font-weight: 1000;
+        }
+
+        .discord p {
+            max-width: 650px;
+
+            margin-top: 7px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+        .discord-button {
+            flex-shrink: 0;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 50px;
+            padding: 0 25px;
+
+            background: var(--red);
+            border: 1px solid var(--red);
+
+            color: #ffffff;
+
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            transition: 0.2s ease;
+        }
+
+        .discord-button:hover {
+            background: var(--red-light);
+            border-color: var(--red-light);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =====================================================
+           I7 CONNECTION
+        ===================================================== */
+
+        .connection {
+            text-align: center;
+
+            padding: 100px 6%;
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0b0b0b,
+                    #101010
+                );
+        }
+
+        .connection small {
+            color: var(--red);
+
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .connection h2 {
+            margin-top: 10px;
+
+            font-size: clamp(35px, 6vw, 65px);
+            font-weight: 1000;
+            letter-spacing: -3px;
+        }
+
+        .connection p {
+            max-width: 650px;
+
+            margin: 15px auto 0;
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            padding: 45px 6%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: #050505;
+        }
+
+        .footer-logo {
+            font-size: 25px;
+            font-weight: 1000;
+            letter-spacing: -1px;
+        }
+
+        .footer-logo span {
+            color: var(--red);
+        }
+
+        footer p {
+            color: #555555;
+
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                min-height: 520px;
+                padding: 80px 6%;
+            }
+
+            .about-grid,
+            .founder {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-side {
+                border-right: 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .rules,
+            .updates {
+                grid-template-columns: 1fr;
+            }
+
+            .discord {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .discord-button {
+                width: 100%;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+                font-size: 70px;
+                letter-spacing: -4px;
+            }
+
+            .hero h2 {
+                font-size: 19px;
+            }
+
+            .container {
+                padding: 75px 0;
+            }
+
+            .heading h2 {
+                font-size: 34px;
+            }
+
+            .card,
+            .founder-side,
+            .founder-info,
+            .rule,
+            .update,
+            .discord {
+                padding: 25px;
+            }
+
+            .founder-info h3 {
+                font-size: 30px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            I7<span>.</span>
+        </a>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="member.html">Members</a>
+            </li>
+
+            <li>
+                <a href="community.html">Community</a>
+            </li>
+
+            <li>
+                <a href="pmkn.html">PMKN</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <span class="eyebrow">
+                I7 Clan Featured Partner
+            </span>
+
+            <h1>
+                PMKN<span>.</span>
+            </h1>
+
+            <h2>
+                Built To Compete
+            </h2>
+
+            <p>
+                PMKN is a separate Roblox Rivals community
+                founded by Kairio. This page highlights the
+                connection between PMKN and I7 while keeping
+                PMKN as its own independent clan.
+            </p>
+
+            <div class="hero-tags">
+
+                <span class="tag">
+                    Roblox Rivals
+                </span>
+
+                <span class="tag">
+                    PMKN
+                </span>
+
+                <span class="tag">
+                    I7 Connection
+                </span>
+
+                <span class="tag">
+                    Community
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         ABOUT PMKN
+    ===================================================== -->
+
+    <section class="container">
+
+        <div class="heading">
+
+            <small>
+                About The Clan
+            </small>
+
+            <h2>
+                What Is PMKN?
+            </h2>
+
+            <p>
+                A quick introduction to PMKN and its
+                connection with the I7 community.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="card">
+
+                <span class="card-label">
+                    PMKN
+                </span>
+
+                <h3>
+                    An Independent Clan
+                </h3>
+
+                <p>
+                    PMKN is its own independent clan and
+                    community. It has its own players,
+                    leadership and community spaces.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="card-label">
+                    Connection
+                </span>
+
+                <h3>
+                    Connected With I7
+                </h3>
+
+                <p>
+                    PMKN and I7 have a friendly connection
+                    through Kairio and the communities around
+                    Roblox Rivals.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         KAIRIO
+    ===================================================== -->
+
+    <section class="container">
+
+        <div class="heading">
+
+            <small>
+                Founder Spotlight
+            </small>
+
+            <h2>
+                Meet Kairio
+            </h2>
+
+        </div>
+
+
+        <div class="founder">
+
+            <div class="founder-side">
+
+                <div class="founder-number">
+                    01
+                </div>
+
+                <p>
+                    PMKN Founder
+                </p>
+
+            </div>
+
+
+            <div class="founder-info">
+
+                <small>
+                    PMKN Founder • I7 Member
+                </small>
+
+                <h3>
+                    Kairio
+                </h3>
+
+                <p>
+                    Kairio is the founder of PMKN and a member
+                    connected with the I7 community. PMKN was
+                    created as its own clan while maintaining
+                    a friendly relationship with I7.
+                </p>
+
+                <a
+                    href="https://www.roblox.com/users/7339522066/profile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="profile-link"
+                >
+                    View Roblox Profile
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RULES
+    ===================================================== -->
+
+    <section class="container">
+
+        <div class="heading">
+
+            <small>
+                Community Standards
+            </small>
+
+            <h2>
+                PMKN Rules
+            </h2>
+
+            <p>
+                Simple standards for keeping the PMKN
+                community competitive and enjoyable.
+            </p>
+
+        </div>
+
+
+        <div class="rules">
+
+            <div class="rule">
+
+                <div class="rule-number">
+                    01
+                </div>
+
+                <h3>
+                    Respect Everyone
+                </h3>
+
+                <p>
+                    Treat players, staff and other communities
+                    with respect.
+                </p>
+
+            </div>
+
+
+            <div class="rule">
+
+                <div class="rule-number">
+                    02
+                </div>
+
+                <h3>
+                    No Toxicity
+                </h3>
+
+                <p>
+                    Keep the community welcoming and avoid
+                    unnecessary arguments or harassment.
+                </p>
+
+            </div>
+
+
+            <div class="rule">
+
+                <div class="rule-number">
+                    03
+                </div>
+
+                <h3>
+                    Play Fair
+                </h3>
+
+                <p>
+                    Compete fairly and follow the rules of
+                    the games you play.
+                </p>
+
+            </div>
+
+
+            <div class="rule">
+
+                <div class="rule-number">
+                    04
+                </div>
+
+                <h3>
+                    Represent PMKN
+                </h3>
+
+                <p>
+                    Members should represent PMKN in a
+                    respectful way.
+                </p>
+
+            </div>
+
+
+            <div class="rule">
+
+                <div class="rule-number">
+                    05
+                </div>
+
+                <h3>
+                    Follow Staff
+                </h3>
+
+                <p>
+                    Listen to legitimate instructions from
+                    PMKN staff and moderators.
+                </p>
+
+            </div>
+
+
+            <div class="rule">
+
+                <div class="rule-number">
+                    06
+                </div>
+
+                <h3>
+                    Have Fun
+                </h3>
+
+                <p>
+                    Competitive gaming is better when the
+                    community enjoys being part of it.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         UPDATES
+    ===================================================== -->
+
+    <section class="container">
+
+        <div class="heading">
+
+            <small>
+                Stay Connected
+            </small>
+
+            <h2>
+                PMKN Updates
+            </h2>
+
+            <p>
+                PMKN announcements, community information
+                and future updates can be found through
+                the official PMKN Discord.
+            </p>
+
+        </div>
+
+
+        <div class="updates">
+
+            <div class="update">
+
+                <span class="update-label">
+                    Community
+                </span>
+
+                <h3>
+                    PMKN Discord
+                </h3>
+
+                <p>
+                    The PMKN Discord is the main place for
+                    community communication, announcements
+                    and clan information.
+                </p>
+
+            </div>
+
+
+            <div class="update">
+
+                <span class="update-label">
+                    Information
+                </span>
+
+                <h3>
+                    Clan News
+                </h3>
+
+                <p>
+                    Important PMKN information and future
+                    community announcements can be shared
+                    through the Discord.
+                </p>
+
+            </div>
+
+
+            <div class="update">
+
+                <span class="update-label">
+                    Community
+                </span>
+
+                <h3>
+                    Stay Connected
+                </h3>
+
+                <p>
+                    Players can use the PMKN community to
+                    connect, communicate and follow future
+                    developments.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ONE DISCORD BUTTON ONLY -->
+
+        <div class="discord">
+
+            <div>
+
+                <small>
+                    Official PMKN Community
+                </small>
+
+                <h3>
+                    Join The PMKN Discord
+                </h3>
+
+                <p>
+                    Join the PMKN Discord for announcements,
+                    community communication and future
+                    PMKN information.
+                </p>
+
+            </div>
+
+
+            <a
+                href="https://discord.gg/VsFAxDN3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="discord-button"
+            >
+                PMKN Discord
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         I7 × PMKN
+    ===================================================== -->
+
+    <section class="connection">
+
+        <small>
+            I7 × PMKN
+        </small>
+
+        <h2>
+            Different Clans.<br>
+            One Connection.
+        </h2>
+
+        <p>
+            I7 and PMKN remain independent communities,
+            connected through friendship, players and a
+            shared interest in Roblox Rivals.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            I7<span>.</span>
+        </div>
+
+        <p>
+            I7 Clan × PMKN
+        </p>
+
+        <p>
+            Roblox Rivals Community
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
+
