@@ -4421,3 +4421,537 @@ nav ul li a.active::after {
     }
 
 }
+/* =====================================================
+   I7 CLAN
+   MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    /* =================================================
+       GLOBAL
+    ================================================= */
+
+    body {
+        overflow-x: hidden;
+    }
+
+
+    /* =================================================
+       NAVBAR
+    ================================================= */
+
+    nav {
+        height: 64px;
+
+        padding: 0 16px;
+
+        gap: 10px;
+
+        justify-content: space-between;
+    }
+
+
+    /* I7 LOGO */
+
+    .logo {
+        font-size: 27px;
+
+        letter-spacing: -2px;
+
+        flex-shrink: 0;
+    }
+
+
+    /* HIDE DESKTOP NAV LINKS */
+
+    nav ul {
+        display: none;
+    }
+
+
+    /* AUTH AREA */
+
+    .nav-auth {
+        display: flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        margin-left: auto;
+    }
+
+
+    /* HIDE LOGIN + SIGN UP ON MOBILE */
+
+    .nav-login,
+    .nav-signup {
+        display: none;
+    }
+
+
+    /* ACCOUNT */
+
+    .nav-account {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        min-height: 40px;
+
+        padding: 0 13px;
+
+        border: 1px solid #333;
+
+        background: #101010;
+
+        color: #ffffff;
+
+        font-size: 10px;
+
+        font-weight: 900;
+
+        letter-spacing: 1px;
+
+        text-transform: uppercase;
+
+        white-space: nowrap;
+    }
+
+
+    .nav-account:hover {
+        border-color: var(--red);
+
+        color: var(--red);
+    }
+
+
+    /* JOIN I7 */
+
+    .nav-join {
+        min-height: 40px;
+
+        padding: 0 14px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        font-size: 10px;
+
+        letter-spacing: 1px;
+
+        white-space: nowrap;
+
+        flex-shrink: 0;
+    }
+
+
+
+    /* =================================================
+       HERO
+    ================================================= */
+
+    .hero {
+        min-height: auto;
+
+        padding:
+            85px
+            18px
+            75px;
+
+        display: flex;
+
+        align-items: flex-start;
+    }
+
+
+    .hero-content {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+
+    /* =================================================
+       HERO BADGE
+    ================================================= */
+
+    .badge {
+        max-width: 100%;
+
+        padding: 12px 15px;
+
+        font-size: 10px;
+
+        line-height: 1.4;
+
+        letter-spacing: 1.5px;
+
+        white-space: normal;
+    }
+
+
+    /* =================================================
+       BIG I7
+    ================================================= */
+
+    .hero h1 {
+        font-size: clamp(105px, 30vw, 145px);
+
+        line-height: 0.8;
+
+        letter-spacing: -7px;
+
+        margin-top: 45px;
+    }
+
+
+    /* =================================================
+       BUILT DIFFERENT
+    ================================================= */
+
+    .hero h2 {
+        font-size: clamp(43px, 13vw, 70px);
+
+        line-height: 0.92;
+
+        letter-spacing: -3px;
+
+        margin-top: 35px;
+
+        max-width: 100%;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* =================================================
+       DESCRIPTION
+    ================================================= */
+
+    .hero p {
+        margin-top: 28px;
+
+        max-width: 100%;
+
+        font-size: 17px;
+
+        line-height: 1.7;
+
+        color: #999;
+    }
+
+
+    /* =================================================
+       HERO BUTTONS
+    ================================================= */
+
+    .buttons {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 13px;
+
+        margin-top: 34px;
+    }
+
+
+    .buttons .btn {
+        width: 100%;
+
+        min-height: 58px;
+
+        padding: 0 18px;
+
+        font-size: 11px;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* =================================================
+       GENERAL SECTIONS
+    ================================================= */
+
+    section {
+        width: 100%;
+    }
+
+
+    .section-title {
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    /* =================================================
+       WHY I7
+    ================================================= */
+
+    .why-grid {
+        grid-template-columns: 1fr !important;
+
+        gap: 14px;
+    }
+
+
+    /* =================================================
+       STATS
+    ================================================= */
+
+    .stats {
+        grid-template-columns: 1fr 1fr !important;
+
+        gap: 10px;
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    /* =================================================
+       LEADERS
+    ================================================= */
+
+    .leader-grid {
+        grid-template-columns: 1fr !important;
+
+        gap: 14px;
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    /* =================================================
+       HIERARCHY
+    ================================================= */
+
+    .hierarchy-grid {
+        grid-template-columns: 1fr !important;
+
+        gap: 14px;
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    /* =================================================
+       RANKINGS
+    ================================================= */
+
+    .ranking-table {
+        margin-left: 18px;
+
+        margin-right: 18px;
+
+        overflow-x: auto;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    .ranking-header,
+    .ranking-row {
+        min-width: 650px;
+    }
+
+
+    /* =================================================
+       ACHIEVEMENTS
+    ================================================= */
+
+    .achievement-grid {
+        grid-template-columns: 1fr !important;
+
+        gap: 14px;
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    /* =================================================
+       PLAYER SPOTLIGHT
+    ================================================= */
+
+    .spotlight {
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    .spotlight-card {
+        grid-template-columns: 1fr !important;
+    }
+
+
+    .spotlight-content {
+        padding: 25px 20px;
+    }
+
+
+    /* =================================================
+       NEWS
+    ================================================= */
+
+    .news-grid {
+        grid-template-columns: 1fr !important;
+
+        gap: 14px;
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    /* =================================================
+       MEMBERS
+    ================================================= */
+
+    .member-grid {
+        grid-template-columns: 1fr !important;
+
+        gap: 12px;
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    /* =================================================
+       TOURNAMENT
+    ================================================= */
+
+    .tournament-section {
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    .tournament-header {
+        grid-template-columns: 1fr !important;
+
+        gap: 30px;
+    }
+
+
+    .tournament-winners {
+        grid-template-columns: 1fr !important;
+
+        gap: 14px;
+    }
+
+
+    .tournament-info-grid {
+        grid-template-columns: 1fr 1fr !important;
+
+        gap: 10px;
+    }
+
+
+    /* =================================================
+       MEDIA
+    ================================================= */
+
+    .media-grid {
+        grid-template-columns: 1fr !important;
+
+        gap: 16px;
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    .media-video iframe {
+        width: 100%;
+
+        aspect-ratio: 16 / 9;
+    }
+
+
+    /* =================================================
+       ABOUT
+    ================================================= */
+
+    .about {
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    /* =================================================
+       RULES
+    ================================================= */
+
+    .rules-grid {
+        grid-template-columns: 1fr !important;
+
+        gap: 14px;
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    /* =================================================
+       RECRUITMENT
+    ================================================= */
+
+    .join-section {
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    .join-box {
+        padding: 35px 22px;
+    }
+
+
+    /* =================================================
+       FOOTER
+    ================================================= */
+
+    footer {
+        padding-left: 18px;
+
+        padding-right: 18px;
+
+        text-align: center;
+    }
+
+
+    .footer-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+}
