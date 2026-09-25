@@ -2067,9 +2067,6 @@
 
 </footer>
 
-
-
-<script src="script.js"></script>
 <!-- =====================================================
      CONNECT WITH I7 MODAL
 ===================================================== -->
@@ -2162,7 +2159,21 @@
     </div>
 
 </div>
-        
+
+<script src="script.js"></script>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const nav = document.querySelector("nav");
+
+menuToggle.addEventListener("click", () => {
+    nav.classList.toggle("nav-open");
+
+    menuToggle.textContent =
+        nav.classList.contains("nav-open") ? "×" : "☰";
+});
+</script>
+
 </body>
 
 </html>
