@@ -39,96 +39,106 @@
 <body>
 
 
+
 <!-- =====================================================
-     NAVBAR
+     I7 PREMIUM NAVBAR
 ===================================================== -->
 
-<nav>
+<nav class="i7-navbar">
 
-    <div class="logo">
+    <!-- LOGO -->
+    <a href="#home" class="logo">
         I7<span>.</span>
-    </div>
-
+    </a>
 
     <!-- DESKTOP + MOBILE MENU -->
-    <div class="mobile-menu">
+    <div class="mobile-menu" id="mobileMenu">
 
-        <ul>
+        <ul class="nav-links">
 
-            <li>
-                <a href="#home">Home</a>
-            </li>
+            <li><a href="#home">Home</a></li>
 
-            <li>
-                <a href="#why">Why I7</a>
-            </li>
+            <li><a href="#leaders">Leaders</a></li>
 
-            <li>
-                <a href="#leaders">Leaders</a>
-            </li>
+            <li><a href="#rankings">Rankings</a></li>
 
-            <li>
-                <a href="#rankings">Rankings</a>
-            </li>
+            <li><a href="#news">News</a></li>
 
-            <li>
-                <a href="#news">News</a>
-            </li>
+            <!-- MORE DROPDOWN -->
+            <li class="nav-dropdown">
 
-            <li>
-                <a href="member.html">Members</a>
-            </li>
+                <button class="dropdown-trigger" type="button">
+                    More <span class="dropdown-arrow">⌄</span>
+                </button>
 
-            <li>
-                <a href="#tournament">Tournament</a>
-            </li>
+                <div class="dropdown-menu">
 
-            <li>
-                <a href="community.html">Community</a>
+                    <a href="#why">Why I7</a>
+
+                    <a href="member.html">Members</a>
+
+                    <a href="#tournament">Tournament</a>
+
+                    <a href="community.html">Community</a>
+
+                </div>
+
             </li>
 
         </ul>
 
+        <!-- RIGHT SIDE ACTIONS -->
+        <div class="nav-actions">
 
-        <!-- AUTH -->
-        <div class="nav-auth">
+            <!-- ACCOUNT DROPDOWN -->
+            <div class="nav-dropdown account-dropdown">
 
-            <a href="login.html" class="nav-login">
-                Login
-            </a>
+                <button class="account-trigger dropdown-trigger"
+                        type="button">
 
-            <a href="signup.html" class="nav-signup">
-                Sign Up
-            </a>
+                    Account <span class="dropdown-arrow">⌄</span>
 
-            <a href="profile.html" class="nav-account">
-                Account
+                </button>
+
+                <div class="dropdown-menu account-menu">
+
+                    <a href="profile.html">My Profile</a>
+
+                    <a href="login.html">Login</a>
+
+                    <a href="signup.html">Sign Up</a>
+
+                </div>
+
+            </div>
+
+            <!-- JOIN I7 -->
+            <a href="#recruitment" class="nav-join">
+                JOIN I7
             </a>
 
         </div>
 
-
-        <!-- JOIN I7 -->
-        <a
-            href="#recruitment"
-            class="nav-join"
-        >
-            JOIN I7
-        </a>
-
     </div>
-
 
     <!-- MOBILE MENU BUTTON -->
     <button
         class="menu-toggle"
         id="menuToggle"
-        aria-label="Open menu"
-    >
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false">
+
         ☰
+
     </button>
 
 </nav>
+
+<!-- =====================================================
+     END NAVBAR
+===================================================== -->
+
 
 <!-- =====================================================
      HERO
