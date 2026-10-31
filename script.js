@@ -380,6 +380,119 @@ function closeConnect() {
 
     if (!modal) return;
 
+
+/* =====================================================
+   I7 NAVBAR — MOBILE MENU & DROPDOWNS
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const navbar = document.querySelector(".i7-navbar");
+    const menuToggle = document.getElementById("menuToggle");
+
+    if (!navbar) {
+        console.error("I7 navbar not found!");
+        return;
+    }
+
+    // MOBILE MENU
+    if (menuToggle) {
+        menuToggle.addEventListener("click", () => {
+
+            const isOpen = navbar.classList.toggle("nav-open");
+
+            menuToggle.textContent = isOpen ? "×" : "☰";
+            menuToggle.setAttribute("aria-expanded", isOpen);
+
+        });
+    }
+
+    // MORE & ACCOUNT DROPDOWNS
+    const dropdowns = navbar.querySelectorAll(".nav-dropdown");
+
+    dropdowns.forEach(dropdown => {
+
+        const trigger = dropdown.querySelector(".dropdown-trigger");
+
+        if (!trigger) return;
+
+        trigger.addEventListener("click", event => {
+
+            event.stopPropagation();
+
+            // Close other dropdowns
+            dropdowns.forEach(other => {
+                if (other !== dropdown) {
+                    other.classList.remove("open");
+
+                    const otherTrigger =
+                        other.querySelector(".dropdown-trigger");
+
+                    if (otherTrigger) {
+                        otherTrigger.setAttribute("aria-expanded", "false");
+                    }
+                }
+            });
+
+            // Toggle selected dropdown
+            const isOpen = dropdown.classList.toggle("open");
+
+            trigger.setAttribute("aria-expanded", isOpen);
+
+        });
+
+    });
+
+    // CLOSE DROPDOWNS WHEN CLICKING OUTSIDE
+    document.addEventListener("click", event => {
+
+        if (!navbar.contains(event.target)) {
+
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove("open");
+
+                const trigger =
+                    dropdown.querySelector(".dropdown-trigger");
+
+                if (trigger) {
+                    trigger.setAttribute("aria-expanded", "false");
+                }
+            });
+
+        }
+
+    });
+
+    // CLOSE MENU AND DROPDOWNS WITH ESCAPE
+    document.addEventListener("keydown", event => {
+
+        if (event.key === "Escape") {
+
+            navbar.classList.remove("nav-open");
+
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove("open");
+
+                const trigger =
+                    dropdown.querySelector(".dropdown-trigger");
+
+                if (trigger) {
+                    trigger.setAttribute("aria-expanded", "false");
+                }
+            });
+
+            if (menuToggle) {
+                menuToggle.textContent = "☰";
+                menuToggle.setAttribute("aria-expanded", "false");
+            }
+
+        }
+
+    });
+
+});
+
+
     modal.classList.remove("active");
 
 }
