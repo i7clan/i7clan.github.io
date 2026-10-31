@@ -1,5 +1,6 @@
+
 /* =====================================================
-   I7 CLAN — JAVASCRIPT
+   I7 CLAN — COMPLETE JAVASCRIPT
 ===================================================== */
 
 
@@ -18,7 +19,6 @@ const leaders = {
             "https://www.roblox.com/users/5197013711/profile"
     },
 
-
     i7_clan: {
         name: "i7_clan",
         avatar: "I7",
@@ -27,7 +27,6 @@ const leaders = {
         roblox:
             "https://www.roblox.com/users/11163707583/profile"
     },
-
 
     Jaden: {
         name: "Jaden",
@@ -41,7 +40,6 @@ const leaders = {
 };
 
 
-
 /* =====================================================
    OPEN LEADER PROFILE
 ===================================================== */
@@ -53,78 +51,35 @@ function openLeader(username) {
     const leader = leaders[username];
 
     if (!leader) {
-
-        console.error(
-            "Leader not found:",
-            username
-        );
-
+        console.error("Leader not found:", username);
         return;
     }
 
+    const profileName = document.getElementById("profileName");
+    const profileAvatar = document.getElementById("profileAvatar");
+    const profileDescription = document.getElementById("profileDescription");
+    const robloxProfile = document.getElementById("robloxProfile");
+    const leaderModal = document.getElementById("leaderModal");
 
-    const profileName =
-        document.getElementById("profileName");
-
-    const profileAvatar =
-        document.getElementById("profileAvatar");
-
-    const profileDescription =
-        document.getElementById("profileDescription");
-
-    const robloxProfile =
-        document.getElementById("robloxProfile");
-
-    const leaderModal =
-        document.getElementById("leaderModal");
-
-
-    if (!profileName) {
-        console.error("Missing #profileName");
+    if (
+        !profileName ||
+        !profileAvatar ||
+        !profileDescription ||
+        !robloxProfile ||
+        !leaderModal
+    ) {
+        console.error("One or more leader modal elements are missing.");
         return;
     }
 
-    if (!profileAvatar) {
-        console.error("Missing #profileAvatar");
-        return;
-    }
-
-    if (!profileDescription) {
-        console.error("Missing #profileDescription");
-        return;
-    }
-
-    if (!robloxProfile) {
-        console.error("Missing #robloxProfile");
-        return;
-    }
-
-    if (!leaderModal) {
-        console.error("Missing #leaderModal");
-        return;
-    }
-
-
-    profileName.textContent =
-        leader.name;
-
-
-    profileAvatar.textContent =
-        leader.avatar;
-
-
-    profileDescription.textContent =
-        leader.description;
-
-
-    robloxProfile.href =
-        leader.roblox;
-
+    profileName.textContent = leader.name;
+    profileAvatar.textContent = leader.avatar;
+    profileDescription.textContent = leader.description;
+    robloxProfile.href = leader.roblox;
 
     leaderModal.classList.add("active");
 
 }
-
 
 
 /* =====================================================
@@ -133,8 +88,7 @@ function openLeader(username) {
 
 function closeLeader() {
 
-    const leaderModal =
-        document.getElementById("leaderModal");
+    const leaderModal = document.getElementById("leaderModal");
 
     if (!leaderModal) return;
 
@@ -143,48 +97,31 @@ function closeLeader() {
 }
 
 
-
 /* =====================================================
    OPEN JOIN MODAL
 ===================================================== */
 
 function openJoin() {
 
-    const modal =
-        document.getElementById("joinModal");
+    const modal = document.getElementById("joinModal");
 
     if (!modal) return;
 
-
-    const form =
-        document.getElementById("joinForm");
-
-    const success =
-        document.getElementById(
-            "applicationSuccess"
-        );
-
+    const form = document.getElementById("joinForm");
+    const success = document.getElementById("applicationSuccess");
 
     if (form) {
-
         form.reset();
-
         form.style.display = "flex";
-
     }
-
 
     if (success) {
-
         success.style.display = "none";
-
     }
-
 
     modal.classList.add("active");
 
 }
-
 
 
 /* =====================================================
@@ -193,15 +130,13 @@ function openJoin() {
 
 function closeJoin() {
 
-    const modal =
-        document.getElementById("joinModal");
+    const modal = document.getElementById("joinModal");
 
     if (!modal) return;
 
     modal.classList.remove("active");
 
 }
-
 
 
 /* =====================================================
@@ -212,149 +147,32 @@ function submitApplication(event) {
 
     event.preventDefault();
 
-
-    const usernameInput =
-        document.getElementById(
-            "robloxUsername"
-        );
-
+    const usernameInput = document.getElementById("robloxUsername");
 
     if (!usernameInput) {
-
-        console.error(
-            "Missing #robloxUsername"
-        );
-
+        console.error("Missing #robloxUsername");
         return;
-
     }
 
-
-    const username =
-        usernameInput.value.trim();
-
+    const username = usernameInput.value.trim();
 
     if (username === "") {
-
-        alert(
-            "Please enter your Roblox username."
-        );
-
+        alert("Please enter your Roblox username.");
         return;
-
     }
 
-
-    const form =
-        document.getElementById("joinForm");
-
-    const success =
-        document.getElementById(
-            "applicationSuccess"
-        );
-
+    const form = document.getElementById("joinForm");
+    const success = document.getElementById("applicationSuccess");
 
     if (form) {
-
         form.style.display = "none";
-
     }
-
 
     if (success) {
-
         success.style.display = "block";
-
     }
 
 }
-
-
-
-/* =====================================================
-   CLOSE MODALS WHEN CLICKING OUTSIDE
-===================================================== */
-
-window.addEventListener(
-    "click",
-    function(event) {
-
-        const leaderModal =
-            document.getElementById(
-                "leaderModal"
-            );
-
-        const joinModal =
-            document.getElementById(
-                "joinModal"
-            );
-          const connectModal =
-    document.getElementById(
-        "connectModal"
-    );
-
-        if (
-            leaderModal &&
-            event.target === leaderModal
-        ) {
-
-            closeLeader();
-
-        }
-
-
-        if (
-            joinModal &&
-            event.target === joinModal
-        ) {
-
-            closeJoin();
-
-        }
-       if (
-    connectModal &&
-    event.target === connectModal
-) {
-
-    closeConnect();
-
-}
-
-    }
-);
-
-
-
-/* =====================================================
-   ESCAPE KEY
-===================================================== */
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-     if (event.key === "Escape") {
-
-    closeLeader();
-
-    closeJoin();
-
-    closeConnect();
-
-}
-
-    }
-);
-
-
-
-/* =====================================================
-   SCRIPT LOADED CHECK
-===================================================== */
-
-console.log(
-    "I7 Clan script.js loaded successfully."
-);
 
 
 /* =====================================================
@@ -363,8 +181,7 @@ console.log(
 
 function openConnect() {
 
-    const modal =
-        document.getElementById("connectModal");
+    const modal = document.getElementById("connectModal");
 
     if (!modal) return;
 
@@ -375,17 +192,45 @@ function openConnect() {
 
 function closeConnect() {
 
-    const modal =
-        document.getElementById("connectModal");
+    const modal = document.getElementById("connectModal");
 
     if (!modal) return;
+
+    modal.classList.remove("active");
+
+}
+
+
+/* =====================================================
+   CLOSE MODALS WHEN CLICKING OUTSIDE
+===================================================== */
+
+window.addEventListener("click", function(event) {
+
+    const leaderModal = document.getElementById("leaderModal");
+    const joinModal = document.getElementById("joinModal");
+    const connectModal = document.getElementById("connectModal");
+
+    if (leaderModal && event.target === leaderModal) {
+        closeLeader();
+    }
+
+    if (joinModal && event.target === joinModal) {
+        closeJoin();
+    }
+
+    if (connectModal && event.target === connectModal) {
+        closeConnect();
+    }
+
+});
 
 
 /* =====================================================
    I7 NAVBAR — MOBILE MENU & DROPDOWNS
 ===================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+function initializeI7Navbar() {
 
     const navbar = document.querySelector(".i7-navbar");
     const menuToggle = document.getElementById("menuToggle");
@@ -395,34 +240,52 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // MOBILE MENU
+    console.log("I7 navbar initialized successfully.");
+
+    /* MOBILE MENU */
+
     if (menuToggle) {
-        menuToggle.addEventListener("click", () => {
+
+        menuToggle.addEventListener("click", function() {
 
             const isOpen = navbar.classList.toggle("nav-open");
 
             menuToggle.textContent = isOpen ? "×" : "☰";
-            menuToggle.setAttribute("aria-expanded", isOpen);
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
 
         });
+
     }
 
-    // MORE & ACCOUNT DROPDOWNS
+
+    /* MORE & ACCOUNT DROPDOWNS */
+
     const dropdowns = navbar.querySelectorAll(".nav-dropdown");
 
-    dropdowns.forEach(dropdown => {
+    dropdowns.forEach(function(dropdown) {
 
         const trigger = dropdown.querySelector(".dropdown-trigger");
 
-        if (!trigger) return;
+        if (!trigger) {
+            console.warn("Dropdown trigger missing:", dropdown);
+            return;
+        }
 
-        trigger.addEventListener("click", event => {
+        trigger.addEventListener("click", function(event) {
 
+            event.preventDefault();
             event.stopPropagation();
 
-            // Close other dropdowns
-            dropdowns.forEach(other => {
+            // Close other dropdowns first
+
+            dropdowns.forEach(function(other) {
+
                 if (other !== dropdown) {
+
                     other.classList.remove("open");
 
                     const otherTrigger =
@@ -431,24 +294,34 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (otherTrigger) {
                         otherTrigger.setAttribute("aria-expanded", "false");
                     }
+
                 }
+
             });
 
-            // Toggle selected dropdown
+
+            // Toggle the selected dropdown
+
             const isOpen = dropdown.classList.toggle("open");
 
-            trigger.setAttribute("aria-expanded", isOpen);
+            trigger.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
 
         });
 
     });
 
-    // CLOSE DROPDOWNS WHEN CLICKING OUTSIDE
-    document.addEventListener("click", event => {
+
+    /* CLOSE DROPDOWNS WHEN CLICKING OUTSIDE */
+
+    document.addEventListener("click", function(event) {
 
         if (!navbar.contains(event.target)) {
 
-            dropdowns.forEach(dropdown => {
+            dropdowns.forEach(function(dropdown) {
+
                 dropdown.classList.remove("open");
 
                 const trigger =
@@ -457,20 +330,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (trigger) {
                     trigger.setAttribute("aria-expanded", "false");
                 }
+
             });
 
         }
 
     });
 
-    // CLOSE MENU AND DROPDOWNS WITH ESCAPE
-    document.addEventListener("keydown", event => {
+
+    /* ESCAPE KEY */
+
+    document.addEventListener("keydown", function(event) {
 
         if (event.key === "Escape") {
 
             navbar.classList.remove("nav-open");
 
-            dropdowns.forEach(dropdown => {
+            dropdowns.forEach(function(dropdown) {
+
                 dropdown.classList.remove("open");
 
                 const trigger =
@@ -479,20 +356,47 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (trigger) {
                     trigger.setAttribute("aria-expanded", "false");
                 }
+
             });
 
             if (menuToggle) {
+
                 menuToggle.textContent = "☰";
-                menuToggle.setAttribute("aria-expanded", "false");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
             }
+
+            closeLeader();
+            closeJoin();
+            closeConnect();
 
         }
 
     });
 
-});
+}
 
 
-    modal.classList.remove("active");
+/* =====================================================
+   INITIALIZE WEBSITE
+===================================================== */
+
+if (document.readyState === "loading") {
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        initializeI7Navbar
+    );
+
+} else {
+
+    initializeI7Navbar();
 
 }
+
+
+console.log("I7 Clan script.js loaded successfully.");
