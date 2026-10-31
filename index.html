@@ -2183,17 +2183,123 @@
 
 <script src="script.js"></script>
 
-<script>
+/* =========================================
+   I7 NAVBAR INTERACTIONS
+========================================= */
+
+const navbar = document.querySelector(".i7-navbar");
 const menuToggle = document.getElementById("menuToggle");
-const nav = document.querySelector("nav");
 
+// MOBILE MENU
 menuToggle.addEventListener("click", () => {
-    nav.classList.toggle("nav-open");
 
-    menuToggle.textContent =
-        nav.classList.contains("nav-open") ? "×" : "☰";
+    const isOpen = navbar.classList.toggle("nav-open");
+
+    menuToggle.textContent = isOpen ? "×" : "☰";
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+
+    menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+
 });
-</script>
+
+// DROPDOWNS
+const dropdowns = document.querySelectorAll(
+    ".i7-navbar .nav-dropdown"
+);
+
+dropdowns.forEach(dropdown => {
+
+    const trigger = dropdown.querySelector(".dropdown-trigger");
+
+    trigger.addEventListener("click", (event) => {
+
+        event.stopPropagation();
+
+        // Close other dropdowns
+        dropdowns.forEach(other => {
+
+            if (other !== dropdown) {
+                other.classList.remove("open");
+
+                other.querySelector(".dropdown-trigger")
+                    .setAttribute("aria-expanded", "false");
+            }
+
+        });
+
+        // Toggle selected dropdown
+        const isOpen = dropdown.classList.toggle("open");
+
+        trigger.setAttribute("aria-expanded", isOpen);
+
+    });
+
+});
+
+// CLOSE WHEN CLICKING OUTSIDE
+document.addEventListener("click", (event) => {
+
+    if (!navbar.contains(event.target)) {
+
+        dropdowns.forEach(dropdown => {
+
+            dropdown.classList.remove("open");
+
+            dropdown.querySelector(".dropdown-trigger")
+                .setAttribute("aria-expanded", "false");
+
+        });
+
+        navbar.classList.remove("nav-open");
+
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+
+    }
+
+});
+
+// CLOSE MOBILE MENU AFTER NAVIGATION
+document.querySelectorAll(
+    ".i7-navbar .nav-links a, .i7-navbar .dropdown-menu a, .i7-navbar .nav-join"
+).forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navbar.classList.remove("nav-open");
+
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+
+    });
+
+});
+
+// CLOSE MENU WITH ESCAPE KEY
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+
+        navbar.classList.remove("nav-open");
+
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove("open");
+
+            dropdown.querySelector(".dropdown-trigger")
+                .setAttribute("aria-expanded", "false");
+        });
+
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+
+    }
+
+});
+
 
 </body>
 
