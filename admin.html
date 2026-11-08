@@ -1,1 +1,228 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>I7 Admin Panel</title>
+
+  <link rel="stylesheet" href="admin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="admin-background"></div>
+
+  <main class="admin-container">
+
+    <header class="admin-header">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">I7</span>
+        <span>I7 <strong>ADMIN</strong></span>
+      </a>
+
+      <span class="admin-label">OWNER DASHBOARD</span>
+    </header>
+
+    <!-- LOGIN SCREEN -->
+    <section id="loginScreen" class="login-screen">
+      <div class="login-card">
+
+        <div class="login-logo">I7</div>
+
+        <p class="eyebrow">BUILT DIFFERENT.</p>
+        <h1>Welcome back.</h1>
+        <p class="muted">Sign in to manage the I7 Clan website.</p>
+
+        <form id="loginForm">
+
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Your admin email"
+            autocomplete="username"
+            required
+          >
+
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Your password"
+            autocomplete="current-password"
+            required
+          >
+
+          <button type="submit" id="loginButton">
+            SIGN IN
+          </button>
+
+          <p id="loginMessage" class="message"></p>
+
+        </form>
+
+        <p class="security-note">
+          <span></span> OWNER ACCESS ONLY
+        </p>
+
+      </div>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboardScreen" class="dashboard hidden">
+
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow">I7 MANAGEMENT</p>
+          <h1>Dashboard</h1>
+          <p class="muted">Manage your clan and website.</p>
+        </div>
+
+        <button id="logoutButton" class="logout-button">
+          LOG OUT
+        </button>
+      </div>
+
+      <!-- STATS -->
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <span>Total Members</span>
+          <strong id="totalCount">0</strong>
+        </div>
+
+        <div class="stat-card">
+          <span>Leaders</span>
+          <strong id="leaderCount">0</strong>
+        </div>
+
+        <div class="stat-card">
+          <span>Teachers</span>
+          <strong id="teacherCount">0</strong>
+        </div>
+
+        <div class="stat-card">
+          <span>Players</span>
+          <strong id="playerCount">0</strong>
+        </div>
+
+      </div>
+
+      <!-- MEMBER MANAGEMENT -->
+      <section class="management-card">
+
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ROSTER CONTROL</p>
+            <h2>Manage Members</h2>
+          </div>
+
+          <button id="addMemberButton" class="primary-button">
+            + ADD MEMBER
+          </button>
+        </div>
+
+        <p id="dashboardMessage" class="message"></p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>MEMBER</th>
+                <th>ROLE</th>
+                <th>STATUS</th>
+                <th>ACTIONS</th>
+              </tr>
+            </thead>
+
+            <tbody id="membersTable">
+              <tr>
+                <td colspan="4">Loading members...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </section>
+
+      <!-- MEMBER FORM -->
+      <section id="memberFormCard" class="management-card hidden">
+
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ROSTER CONTROL</p>
+            <h2 id="formTitle">Add Member</h2>
+          </div>
+        </div>
+
+        <form id="memberForm">
+
+          <input type="hidden" id="memberId">
+
+          <label for="memberName">Member Name</label>
+          <input
+            type="text"
+            id="memberName"
+            placeholder="e.g. i7_player"
+            maxlength="40"
+            required
+          >
+
+          <label for="memberRole">Role</label>
+          <select id="memberRole" required>
+            <option value="LEADER">Leader</option>
+            <option value="TEACHER">Teacher</option>
+            <option value="MEMBER" selected>Member</option>
+          </select>
+
+          <label for="memberStatus">Status</label>
+          <select id="memberStatus" required>
+            <option value="ACTIVE" selected>Active</option>
+            <option value="INACTIVE">Inactive</option>
+            <option value="TRIAL">Trial</option>
+          </select>
+
+          <label for="robloxUrl">Roblox Profile URL</label>
+          <input
+            type="url"
+            id="robloxUrl"
+            placeholder="https://www.roblox.com/users/123456/profile"
+            required
+          >
+
+          <div class="form-actions">
+            <button type="submit" id="saveMemberButton" class="primary-button">
+              SAVE MEMBER
+            </button>
+
+            <button type="button" id="cancelMemberButton" class="secondary-button">
+              CANCEL
+            </button>
+          </div>
+
+          <p id="formMessage" class="message"></p>
+
+        </form>
+
+      </section>
+
+      <footer class="dashboard-footer">
+        I7 CLAN · BUILT DIFFERENT.
+      </footer>
+
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="admin.js"></script>
+
+</body>
+</html>
+
