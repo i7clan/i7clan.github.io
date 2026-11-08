@@ -1,12 +1,16 @@
+
 // ==========================================
 // I7 CLAN - SUPABASE AUTHENTICATION
 // ==========================================
 
-// Supabase project information
-const SUPABASE_URL = "https://wwqpvmfayxxbjomvnarn.supabase.co";
+// ==========================================
+// SUPABASE PROJECT CONFIGURATION
+// ==========================================
+
+const SUPABASE_URL = "https://ffraztjbqywsntmfftjb.supabase.co";
 
 const SUPABASE_PUBLISHABLE_KEY =
-    "sb_publishable_48lWgW1tvXXqy-4x1XS7DQ_QfbirUOG";
+    "sb_publishable_jpHu9S1s37aHZRkmMDrfpw_yAGupnrZ";
 
 // Create Supabase client
 const supabaseClient = window.supabase.createClient(
@@ -35,7 +39,6 @@ if (signupForm) {
 
         const message = document.getElementById("message");
 
-        // Check passwords
         if (password !== confirmPassword) {
             message.textContent = "Passwords do not match.";
             return;
@@ -70,10 +73,11 @@ if (signupForm) {
 
         } catch (error) {
 
-            console.error(error);
+            console.error("Signup error:", error);
 
             message.textContent =
-                "Something went wrong. Please try again.";
+                "Connection failed. Please check your internet and try again.";
+
         }
 
     });
@@ -133,15 +137,17 @@ if (loginForm) {
 
         } catch (error) {
 
-            console.error(error);
+            console.error("Login error:", error);
 
             message.textContent =
-                "Something went wrong. Please try again.";
+                "Connection failed. Please check your internet and try again.";
+
         }
 
     });
 
 }
+
 
 // ==========================================
 // LOGOUT FUNCTION
@@ -149,17 +155,24 @@ if (loginForm) {
 
 async function logoutUser() {
 
-    const { error } =
-        await supabaseClient.auth.signOut();
+    try {
 
-    if (error) {
+        const { error } =
+            await supabaseClient.auth.signOut();
+
+        if (error) {
+            console.error("Logout error:", error);
+            return;
+        }
+
+        window.location.href = "index.html";
+
+    } catch (error) {
 
         console.error("Logout error:", error);
-        return;
 
     }
 
-    window.location.href = "index.html";
 }
 
 
@@ -169,12 +182,23 @@ async function logoutUser() {
 
 async function getCurrentUser() {
 
-    const { data, error } =
-        await supabaseClient.auth.getUser();
+    try {
 
-    if (error) {
+        const { data, error } =
+            await supabaseClient.auth.getUser();
+
+        if (error) {
+            console.error("Get user error:", error);
+            return null;
+        }
+
+        return data.user;
+
+    } catch (error) {
+
+        console.error("Get current user error:", error);
         return null;
+
     }
 
-    return data.user;
 }
